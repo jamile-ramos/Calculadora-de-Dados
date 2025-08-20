@@ -6,12 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('cliente_id')->constrained()->onDelete('cascade');
             $table->decimal('peso_total', 5, 2)->unsigned();
             $table->foreignId('plano_id')->constrained()->onDelete('cascade');
             $table->timestamps();
