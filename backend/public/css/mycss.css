@@ -1,0 +1,64 @@
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+.calculadora-form,
+.contratar-form {
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.calculadora-form {
+    max-width: 500px;
+}
+
+.contratar-form{
+    max-width: 800px;
+    background: #fff !important;
+}
+
+.texto-instrucao,
+.gamer {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-label {
+    flex-shrink: 0;
+    min-width: 130px;
+    color: #044EB1;
+}
+
+.btn-calcular {
+    width: 100%;
+    font-weight: bold;
+    background-color: #044EB1;
+    border-color: #044EB1;
+    color: #fff;
+}
+
+.btn-calcular:hover,
+.btn-calcular:focus,
+.btn-calcular:active {
+    background-color: #044EB1 !important;
+    /* Mantém a cor no hover, focus e active */
+    border-color: #044EB1 !important;
+    color: #fff;
+    box-shadow: none !important;
+    /* Remove qualquer sombra padrão do Bootstrap */
+}
+
+.gamer {
+    color: #044EB1
+}

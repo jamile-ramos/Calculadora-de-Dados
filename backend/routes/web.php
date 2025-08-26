@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PlanoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VendaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//Route::get('/calculadora_plano', [])
+Route::get('/calculadora_plano', [PlanoController::class, 'index'])->name('calculadora.index');
+Route::get('/contratar', [VendaController::class, 'contratarForm']);
 
 require __DIR__.'/auth.php';

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->integer('velocidade');
+            $table->decimal('peso_minimo', 5, 2)->unsigned();
             $table->timestamps();
         });
     }

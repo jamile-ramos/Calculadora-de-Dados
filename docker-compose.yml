@@ -9,6 +9,8 @@ services:
       - db
     ports:
       - "5176:5176"
+    networks: 
+      - micks-network 
       
   api:
     image: nginx:alpine
@@ -20,6 +22,8 @@ services:
       - ./nginx/api.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+    networks:
+      - micks-network
 
   web:
     image: nginx:alpine
@@ -31,6 +35,8 @@ services:
       - ./nginx/web.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+    networks:
+      - micks-network
 
   db:
     image: mysql:8
@@ -44,6 +50,21 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - micks-network
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: micks-mailhog
+    ports:
+      - "1025:1025" # Porta para o Laravel enviar emails
+      - "8025:8025" # Porta para a interface web do MailHog
+    networks:
+      - micks-network
+
+networks:
+  micks-network:
+    driver: bridge
 
 volumes:
   db_data:

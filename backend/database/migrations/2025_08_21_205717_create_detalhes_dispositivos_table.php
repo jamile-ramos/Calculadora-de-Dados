@@ -9,17 +9,17 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('dispositivos', function (Blueprint $table) {
+        Schema::create('detalhes_dispositivos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 255);
-            $table->decimal('peso', 3, 2)->unsigned()->default(0);
+            $table->foreignId('venda_id')->constrained()->onDelete('cascade');
+            $table->string('tipo_dispositivo');
+            $table->integer('quantidade')->unsigned();
             $table->timestamps();
         });
     }
 
-
     public function down(): void
     {
-        Schema::dropIfExists('dispositivos');
+        Schema::dropIfExists('detalhes_dispositivos');
     }
 };

@@ -8,17 +8,21 @@ class Venda extends Model
 {
 
     protected $fillable = [
-        'cliente_id',
+        'nome',
+        'email',
+        'telefone',
+        'is_gamer',
+        'plano_id',
         'peso_total',
-        'plano_id'
     ];
-
-    public function cliente(){
-        return $this->belongsTo(Cliente::class, 'cliente_id');
-    }
 
     public function plano(){
         return $this->belongsTo(Plano::class, 'plano_id');
+    }
+
+    public function detalhesDispositivos()
+    {
+        return $this->hasMany(DetalhesDispositivos::class);
     }
 
 }

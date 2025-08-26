@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+vendor/
+npm-debug.log
+yarn-error.log
+public/hot
+storage/
+bootstrap/cache/
