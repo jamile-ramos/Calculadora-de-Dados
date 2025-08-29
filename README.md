@@ -40,15 +40,7 @@ cd seu-projeto
 Dentro da pasta do projeto:
 docker-compose up -d --bui
 
-3. Acessar a aplicação
-Agora você poderá acessar:
-
-API: http://localhost:3000/api
-
-Frontend: http://localhost:3001
-
-
-4. Instalar servidor de email
+3. Instalar servidor de email
 
 docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog
 
@@ -58,11 +50,19 @@ docker-compose up -d
 
 Acessar para ver os email http://localhost:8025
 
-5. Rodar sistema
+4. Rodar sistema
 
 docker-compose exec app php artisan serve
 
-6. Acesse:
+5. Acesse:
 http://localhost:3001/calculadora_plano
+
+6. Acessar a aplicação
+Agora você poderá acessar:
+
+API: http://localhost:3000/api
+
+Frontend: http://localhost:3001
+
 
 
