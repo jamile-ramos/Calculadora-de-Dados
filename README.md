@@ -47,3 +47,19 @@ API: http://localhost:3000/api
 
 Frontend: http://localhost:3001
 
+
+4. Instalar servidor de email
+
+docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog
+
+Depois rode:
+
+docker-compose up -d
+
+Acessar para ver os email http://localhost:8025
+
+5. Rodar sistema
+
+docker-compose exec app php artisan serve
+
+
