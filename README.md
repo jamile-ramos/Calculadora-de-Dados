@@ -40,7 +40,10 @@ cd seu-projeto
 Dentro da pasta do projeto:
 docker-compose up -d --bui
 
-3. Instalar servidor de email
+Instalar composer
+docker-compose exec app composer install
+
+4. Instalar servidor de email
 
 docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog
 
@@ -64,5 +67,5 @@ API: http://localhost:3000/api
 
 Frontend: http://localhost:3001
 
-
+Criar seed admin
 
