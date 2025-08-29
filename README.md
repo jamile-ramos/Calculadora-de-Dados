@@ -62,4 +62,7 @@ Acessar para ver os email http://localhost:8025
 
 docker-compose exec app php artisan serve
 
+6. Acesse:
+http://localhost:3001/calculadora_plano
+
 
