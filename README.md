@@ -44,7 +44,7 @@ cd seu-projeto
 
 Dentro da pasta do projeto:
 
-docker-compose up -d --bui
+docker-compose up -d --build
 
 
 ## 3. Crie o arquivo .env
@@ -85,8 +85,6 @@ docker-compose exec app composer install --prefer-dist
 ## 5. Limpar cache
 docker-compose exec app php artisan config:clear
 
-docker-compose exec app php artisan cache:clear
-
 ## 6. Gerar chave da aplicação
    
 docker-compose exec app php artisan key:generate
@@ -95,7 +93,7 @@ docker-compose exec app php artisan key:generate
    
 docker-compose exec app php artisan migrate
 
-docker-compose exec app php artisan db:seed --class=AdminSeeder
+docker-compose exec app php artisan db:seed --class=AdminUserSeeder
 
 Acessar para ver os email http://localhost:8025
 
