@@ -82,11 +82,16 @@ MAIL_FROM_NAME="${APP_NAME}"
    
 docker-compose exec app composer install --prefer-dist
 
-## 5. Gerar chave da aplicação
+## 5. Limpar cache
+docker-compose exec app php artisan config:clear
+
+docker-compose exec app php artisan cache:clear
+
+## 6. Gerar chave da aplicação
    
 docker-compose exec app php artisan key:generate
 
-## 6. Rodar migrations e seeders
+## 7. Rodar migrations e seeders
    
 docker-compose exec app php artisan migrate
 
