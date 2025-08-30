@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('telefone', 20);
             $table->boolean('is_gamer')->nullable();
             $table->decimal('peso_total', 5, 2)->unsigned();
-            
             $table->foreignId('plano_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

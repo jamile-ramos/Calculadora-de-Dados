@@ -62,3 +62,7 @@ body {
 .gamer {
     color: #044EB1
 }
+
+.logo-header .logo {
+    color: #fff !important;
+}
