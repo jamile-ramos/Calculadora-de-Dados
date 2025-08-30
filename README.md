@@ -29,48 +29,66 @@ A aplicação roda em containers separados para backend, API, frontend, banco de
 - Docker Compose
 - Git
 
+--- 
 
 ### Passos para rodar o projeto
 
-1. Clonar o repositório
+## 1. Clonar o repositório
 No terminal:
 
 git clone https://github.com/jamile-ramos/Calculadora-de-Dados
 cd seu-projeto
 
-2. Rodar o ambiente Docker
+## 2. Rodar o ambiente Docker
+
 Dentro da pasta do projeto:
 
 docker-compose up -d --bui
 
 
-3. Crie o arquivo .env
+## 3. Crie o arquivo .env
+   
 Copie o arquivo .env.example para .env e configure  as variáveis.
+
 Edite o .env para ajustar as configurações do banco de dados:
 
 DB_CONNECTION=mysql
+
 DB_HOST=laravel_db
+
 DB_PORT=3306
+
 DB_DATABASE=calculadoraDados
+
 DB_USERNAME=user
+
 DB_PASSWORD=secret
 
 E configure o envio de emails (MailHog):
 
 MAIL_MAILER=smtp
+
 MAIL_HOST=mailhog
+
 MAIL_PORT=1025
+
 MAIL_FROM_ADDRESS="hello@example.com"
+
 MAIL_FROM_NAME="${APP_NAME}"
 
-4. Instalar dependências PHP (Composer)
+
+## 4. Instalar dependências PHP (Composer)
+   
 docker-compose exec app composer install --prefer-dist
 
-5. Gerar chave da aplicação
+## 5. Gerar chave da aplicação
+   
 docker-compose exec app php artisan key:generate
 
-6. Rodar migrations e seeders
+## 6. Rodar migrations e seeders
+   
 docker-compose exec app php artisan migrate
+
 docker-compose exec app php artisan db:seed --class=AdminSeeder
 
 Acessar para ver os email http://localhost:8025
