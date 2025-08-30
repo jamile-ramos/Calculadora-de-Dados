@@ -37,6 +37,7 @@ A aplicação roda em containers separados para backend, API, frontend, banco de
 No terminal:
 
 git clone https://github.com/jamile-ramos/Calculadora-de-Dados
+
 cd seu-projeto
 
 ## 2. Rodar o ambiente Docker
