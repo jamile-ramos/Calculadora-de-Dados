@@ -105,4 +105,23 @@ API: http://localhost:3000/api
 
 MailHog (emails): http://localhost:8025
 
+### Possíveis erros e soluções
+
+Erro: 'Permission denied' em storage ou cache
+
+Se ao rodar o projeto ou executar comandos do Laravel você encontrar um erro como:
+
+file_put_contents(...):Failed to open stream:Permission Denied
+
+Isso significa que o Laravel não tem permissão de escrita nas pastas 'storage' e 'bootstrap/cache'.
+
+### Solução
+Execute os comandos abaixo dentro do container 'app':
+
+docker-compose exec app bash
+
+chown -R www-data:www-data storage bootstrap/cache
+
+chmod -R 775 storage bootstrap/cache
+
 
